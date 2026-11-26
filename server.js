@@ -94,12 +94,20 @@ app.post("/api/register", registrationLimiter, async (req, res) => {
             reference: registration.id,
             sheetSynced: true
         });
-    } catch (error) {
-        console.error("Registration error:", error.message);
-        return res.status(500).json({
-            error: "Unable to save registration. Please try again."
-        });
-    }
+    } 
+catch (error) {
+    console.error("Registration error:", {
+        message: error.message,
+        code: error.code,
+        status: error.response?.status,
+        details: error.response?.data
+    });
+
+    return res.status(500).json({
+        error: "Unable to save registration. Please try again."
+    });
+}
+
 });
 
 app.use((req, res) => {

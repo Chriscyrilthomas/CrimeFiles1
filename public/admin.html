@@ -1,0 +1,360 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Admin Control Room | The Crime Files</title>
+
+  <link href="/vendor/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body class="admin-body">
+
+  <div class="top-strip">
+    <span>KE COLLEGE · COMPUTER SCIENCE (SF)</span>
+    <span class="live-dot">SECURE ADMIN PORTAL</span>
+  </div>
+
+  <main class="admin-wrap container py-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <a class="brand-mark" href="/">
+        <span class="brand-seal">CF</span>
+        <span>
+          THE CRIME <b>FILES</b>
+          <small>ADMIN CONTROL ROOM</small>
+        </span>
+      </a>
+
+      <a href="/" class="admin-back">← PUBLIC WEBSITE</a>
+    </div>
+
+    <!-- LOGIN PANEL -->
+
+    <section id="loginPanel" class="admin-login mx-auto">
+
+      <p class="eyebrow red-text">RESTRICTED ACCESS</p>
+
+      <h1 class="admin-title">
+        ADMIN <span>LOGIN.</span>
+      </h1>
+
+      <p class="body-copy">
+        Sign in to manage case files and participant registrations.
+      </p>
+
+      <form id="loginForm" class="mt-4">
+
+        <label for="username">USERNAME</label>
+
+        <input
+          class="form-control mb-3"
+          id="username"
+          required
+          autocomplete="username"
+        >
+
+        <label for="password">PASSWORD</label>
+
+        <input
+          class="form-control mb-3"
+          id="password"
+          type="password"
+          required
+          autocomplete="current-password"
+        >
+
+        <button class="btn btn-danger w-100 btn-submit">
+          ACCESS CONTROL ROOM ↗
+        </button>
+
+        <p id="loginFeedback" class="form-feedback"></p>
+
+      </form>
+
+      <small class="admin-hint">
+        Default development login: admin / ChangeMe123!
+        Change this before deployment.
+      </small>
+
+    </section>
+
+    <!-- DASHBOARD PANEL -->
+
+    <section id="dashboardPanel" hidden>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+
+        <div>
+          <p class="eyebrow red-text">COMMAND CENTRE</p>
+
+          <h1 class="admin-title">
+            CASE <span>OVERVIEW.</span>
+          </h1>
+        </div>
+
+        <button id="logoutButton" class="btn btn-outline-light">
+          SIGN OUT
+        </button>
+
+      </div>
+
+      <!-- STATISTICS -->
+
+      <div class="row g-3 mb-4">
+
+        <div class="col-md-6">
+          <div class="stat-card">
+            <small>TOTAL REGISTRATIONS</small>
+            <strong id="totalRegistrations">0</strong>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="stat-card">
+            <small>ACTIVE CASE FILES</small>
+            <strong id="totalEvents">0</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- EVENT MANAGEMENT -->
+
+      <div class="admin-panel mb-4">
+
+        <div class="panel-heading">
+
+          <h2>CASE FILE MANAGEMENT</h2>
+
+          <button
+            class="btn btn-danger btn-sm"
+            id="addEventButton"
+          >
+            + ADD CASE
+          </button>
+
+        </div>
+
+        <div class="table-responsive">
+
+          <table class="table admin-table">
+
+            <thead>
+              <tr>
+                <th>CASE</th>
+                <th>CATEGORY</th>
+                <th>STATUS</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+
+            <tbody id="eventsTable"></tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+      <!-- PARTICIPANT REGISTRATIONS -->
+
+      <div class="admin-panel">
+
+        <div class="panel-heading">
+
+          <div>
+            <h2>PARTICIPANT REGISTRATIONS</h2>
+
+            <small class="text-secondary">
+              Website and Google Form submissions
+            </small>
+          </div>
+
+          <button
+            class="btn btn-outline-light btn-sm"
+            id="exportButton"
+          >
+            EXPORT CSV ↓
+          </button>
+
+        </div>
+
+        <!-- REGISTRATION SOURCE FILTER -->
+
+        <div class="p-3 d-flex flex-wrap align-items-center gap-2">
+
+          <label for="sourceFilter" class="text-secondary">
+            FILTER SOURCE:
+          </label>
+
+          <select
+            id="sourceFilter"
+            class="form-select form-select-sm"
+            style="max-width:200px"
+          >
+            <option value="All">All Registrations</option>
+            <option value="Website">Website</option>
+            <option value="Google Form">Google Form</option>
+          </select>
+
+          <button
+            id="refreshRegistrations"
+            class="btn btn-outline-light btn-sm"
+          >
+            ↻ REFRESH
+          </button>
+
+        </div>
+
+        <div class="table-responsive">
+
+          <table class="table admin-table">
+
+            <thead>
+              <tr>
+                <th>REFERENCE</th>
+                <th>PARTICIPANT</th>
+                <th>EVENT</th>
+                <th>CONTACT</th>
+                <th>SOURCE</th>
+                <th>STATUS</th>
+                <th>UPDATE</th>
+              </tr>
+            </thead>
+
+            <tbody id="registrationsTable">
+
+              <tr>
+                <td colspan="7">
+                  Loading registrations...
+                </td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- EVENT MODAL -->
+
+  <div class="modal fade" id="eventModal" tabindex="-1">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+      <div class="modal-content admin-modal">
+
+        <div class="modal-header">
+
+          <h5 class="modal-title">
+            CASE FILE DETAILS
+          </h5>
+
+          <button
+            class="btn-close btn-close-white"
+            data-bs-dismiss="modal"
+          ></button>
+
+        </div>
+
+        <form id="eventForm">
+
+          <div class="modal-body">
+
+            <input type="hidden" id="editEventId">
+
+            <label for="eventTitle">TITLE *</label>
+
+            <input
+              class="form-control mb-3"
+              id="eventTitle"
+              required
+            >
+
+            <label for="eventCategory">CATEGORY *</label>
+
+            <input
+              class="form-control mb-3"
+              id="eventCategory"
+              required
+            >
+
+            <label for="eventDescription">DESCRIPTION *</label>
+
+            <textarea
+              class="form-control mb-3"
+              id="eventDescription"
+              rows="3"
+              required
+            ></textarea>
+
+            <label for="eventVenue">VENUE</label>
+
+            <input
+              class="form-control mb-3"
+              id="eventVenue"
+            >
+
+            <label for="eventTime">TIME / DATE</label>
+
+            <input
+              class="form-control mb-3"
+              id="eventTime"
+            >
+
+            <label for="eventPrize">PRIZE</label>
+
+            <input
+              class="form-control mb-3"
+              id="eventPrize"
+              placeholder="e.g. ₹1,000"
+            >
+
+            <label for="eventStatus">STATUS</label>
+
+            <select class="form-select" id="eventStatus">
+              <option>Open</option>
+              <option>Closed</option>
+            </select>
+
+          </div>
+
+          <div class="modal-footer">
+
+            <button
+              type="button"
+              class="btn btn-outline-light"
+              data-bs-dismiss="modal"
+            >
+              CANCEL
+            </button>
+
+            <button class="btn btn-danger">
+              SAVE CASE FILE
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script src="/vendor/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/admin.js"></script>
+
+</body>
+</html>

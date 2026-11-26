@@ -1,0 +1,1359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Crime Files — a crime and investigation themed college fest by the Department of Computer Science (SF), Kuriakose Elias College, Mannanam.">
+  <title>Kuriakose Elias College | The Crime Files</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link href="/vendor/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+
+  <style>
+    .xenium-sponsors-section {
+      background: #080d16;
+      border-top: 1px solid rgba(0, 207, 230, .22);
+      overflow: hidden;
+    }
+
+    .xenium-sponsor-intro {
+      max-width: 620px;
+      margin-bottom: 2rem;
+    }
+
+    .sponsor-carousel {
+      padding: 20px 48px 58px;
+    }
+
+    .xenium-sponsor-card {
+      min-height: 220px;
+      height: 100%;
+      padding: 18px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-align: center;
+      background: linear-gradient(145deg, #101b2a, #080d16);
+      border: 1px solid rgba(0, 207, 230, .55);
+      border-radius: 14px;
+      box-shadow: 0 0 18px rgba(0, 180, 220, .08);
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+    }
+
+    .xenium-sponsor-card:hover {
+      transform: translateY(-5px);
+      border-color: #19d9f2;
+      box-shadow: 0 0 22px rgba(0, 207, 230, .2);
+    }
+
+    .sponsor-logo {
+      width: 150px;
+      height: 105px;
+      flex: 0 0 105px;
+      background-image: url('/images/xenium-sponsors.jpg');
+      background-repeat: no-repeat;
+      background-size: 1599px 1066px;
+      background-color: #fff;
+      border-radius: 8px;
+      margin-bottom: 5px;
+    }
+
+    .sponsor-elohi { background-position: -42px -815px; }
+    .sponsor-electric { background-position: -230px -815px; }
+    .sponsor-horizon { background-position: -425px -815px; }
+    .sponsor-larosa { background-position: -625px -815px; }
+    .sponsor-lilies { background-position: -800px -815px; }
+    .sponsor-kia { background-position: -950px -815px; }
+    .sponsor-nissan { background-position: -1120px -815px; }
+    .sponsor-chandys { background-position: -1310px -815px; }
+
+    .xenium-sponsor-card strong {
+      color: #f4f7fb;
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(.95rem, 1.5vw, 1.2rem);
+      letter-spacing: .06em;
+    }
+
+    .xenium-sponsor-card small {
+      color: #9eafc0;
+      font-family: 'DM Mono', monospace;
+      font-size: .65rem;
+      letter-spacing: .08em;
+    }
+
+    .sponsor-carousel .carousel-control-prev,
+    .sponsor-carousel .carousel-control-next {
+      width: 42px;
+    }
+
+    .sponsor-indicators {
+      bottom: 8px;
+      margin-bottom: 0;
+    }
+
+    .sponsor-indicators [data-bs-target] {
+      width: 24px;
+      height: 4px;
+      border: 0;
+      border-radius: 5px;
+    }
+
+    .xenium-media-partner {
+      margin-top: 1.5rem;
+      padding: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px 24px;
+      text-align: center;
+      border: 1px solid rgba(0, 207, 230, .55);
+      border-radius: 14px;
+      background: rgba(0, 207, 230, .045);
+    }
+
+    .xenium-media-partner span {
+      color: #9eafc0;
+      font-family: 'DM Mono', monospace;
+      font-size: .72rem;
+      letter-spacing: .12em;
+    }
+
+    .xenium-media-partner strong {
+      color: #fff;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.35rem;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 575.98px) {
+      .sponsor-carousel {
+        padding: 15px 28px 55px;
+      }
+
+      .xenium-sponsor-card {
+        min-height: 190px;
+        padding: 12px 6px;
+      }
+
+      .sponsor-logo {
+        transform: scale(.82);
+        margin: -5px 0;
+      }
+
+      .xenium-sponsor-card strong {
+        font-size: .9rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .xenium-sponsor-card {
+        transition: none;
+      }
+
+      .xenium-sponsor-card:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-strip">
+    <span>KE COLLEGE · MANNANAM</span>
+    <span>DEPARTMENT OF COMPUTER SCIENCE (SF)</span>
+    <span class="live-dot">INVESTIGATION ACTIVE</span>
+  </div>
+
+  <header class="college-masthead">
+    <div class="container masthead-inner">
+      <div class="college-monogram" aria-hidden="true">KE</div>
+
+      <div class="college-heading">
+        <p class="masthead-overline">KURIAKOSE ELIAS COLLEGE</p>
+        <h1>KURIAKOSE ELIAS COLLEGE, MANNANAM</h1>
+        <p class="masthead-subtitle">
+          DEPARTMENT OF COMPUTER SCIENCE (SF) <span>·</span> PRESENTS
+        </p>
+      </div>
+
+      <div class="masthead-case">
+        <span>OFFICIAL FEST DOSSIER</span>
+        <strong>THE CRIME FILES</strong>
+        <small>CASE NO. 001 / 02–03 DECEMBER 2026</small>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-dark site-nav sticky-top">
+    <div class="container">
+
+      <a class="navbar-brand brand-mark" href="#home">
+        <span class="brand-seal">CF</span>
+        <span>THE CRIME <b>FILES</b>
+          <small>CASE NO. 001 / 2026</small>
+        </span>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+
+          <li class="nav-item">
+            <a class="nav-link" href="#college">Our College</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#department">Department</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#about">The Case</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#events">Case Files</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#rules">General Rules</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#schedule">Timeline</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#gallery">Evidence</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#sponsors">Sponsors</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-register" href="#register">
+              Register <span>↗</span>
+            </a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HOME SECTION -->
+
+    <section class="hero-section" id="home">
+
+      <div class="hero-photo-layer" aria-hidden="true"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-noise"></div>
+
+      <div class="container hero-content">
+
+        <div class="case-stamp">
+          <span class="stamp-dot"></span>
+          CLASSIFIED DOSSIER
+          <span class="stamp-line"></span>
+          001-A
+        </div>
+
+        <p class="eyebrow">
+          KURIAKOSE ELIAS COLLEGE · COMPUTER SCIENCE (SF)
+        </p>
+
+        <h1>
+          THE CRIME<br>
+          <span>FILES</span><i class="title-period">.</i>
+        </h1>
+
+        <div class="hero-bottom">
+
+          <div class="hero-copy">
+
+            <p class="hero-tagline">
+              EVERY CLUE HAS A STORY.<br>
+              EVERY MIND CAN SOLVE IT.
+            </p>
+
+            <p class="muted-copy">
+              A mystery is waiting to be uncovered. Step into the
+              investigation, follow the evidence and prove your instincts.
+            </p>
+
+            <a class="btn btn-danger btn-investigate" href="#events">
+              EXPLORE THE CASE FILES <span>↗</span>
+            </a>
+
+            <div class="crime-countdown" id="crimeCountdown">
+
+              <div class="countdown-heading">
+                <span class="countdown-live-dot"></span>
+                <span>THE INVESTIGATION BEGINS IN</span>
+                <span class="countdown-case">CASE 001</span>
+              </div>
+
+              <div class="countdown-timer" id="countdownTimer">
+
+                <div class="timer-box">
+                  <span id="timerDays">00</span>
+                  <small>DAYS</small>
+                </div>
+
+                <div class="timer-box">
+                  <span id="timerHours">00</span>
+                  <small>HOURS</small>
+                </div>
+
+                <div class="timer-box">
+                  <span id="timerMinutes">00</span>
+                  <small>MINUTES</small>
+                </div>
+
+                <div class="timer-box">
+                  <span id="timerSeconds">00</span>
+                  <small>SECONDS</small>
+                </div>
+
+              </div>
+
+              <div class="countdown-bottom" id="countdownMessage">
+                <span>◷</span> 02 DECEMBER 2026 · 10:00 AM
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <div class="hero-evidence" aria-label="Case evidence illustration">
+
+          <div class="evidence-photo photo-one">
+            <span>SUBJECT 01</span>
+            <div class="silhouette"></div>
+          </div>
+
+          <div class="evidence-photo photo-two">
+            <span>EVIDENCE / 04</span>
+            <div class="fingerprint">◎</div>
+          </div>
+
+          <div class="red-string string-one"></div>
+          <div class="red-string string-two"></div>
+
+          <div class="evidence-note">
+            WHO<br>
+            KNOWS<br>
+            THE TRUTH?<b>?</b>
+          </div>
+
+          <div class="evidence-tag">
+            DO NOT<br>
+            DISTURB
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="hero-footer">
+        <span>DATE: 02–03 DECEMBER 2026</span>
+        <span>LOCATION: MANNANAM, KERALA</span>
+        <span>SCROLL TO INVESTIGATE ↓</span>
+      </div>
+
+    </section>
+
+    <!-- TICKER -->
+
+    <section class="ticker" aria-label="Fest tagline">
+      <div class="ticker-track">
+        <span>OBSERVE</span> ✳
+        <span>DEDUCE</span> ✳
+        <span>INVESTIGATE</span> ✳
+        <span>UNCOVER THE TRUTH</span> ✳
+        <span>OBSERVE</span> ✳
+        <span>DEDUCE</span> ✳
+        <span>INVESTIGATE</span> ✳
+      </div>
+    </section>
+
+    <!-- COLLEGE AND DEPARTMENT -->
+
+    <section class="institution-section" id="college">
+      <div class="container">
+
+        <div class="section-kicker">
+          <span>01 / INSTITUTIONAL BRIEFING</span>
+          <span>THE PEOPLE BEHIND THE CASE</span>
+        </div>
+
+        <div class="institution-heading">
+
+          <p class="eyebrow red-text">
+            OUR INSTITUTION · OUR DEPARTMENT
+          </p>
+
+          <h2 class="section-title">
+            ROOTED IN HERITAGE.<br>
+            <span>READY FOR WHAT'S NEXT.</span>
+          </h2>
+
+          <p class="institution-lead">
+            The Crime Files is presented by the Department of Computer
+            Science (SF) at Kuriakose Elias College, Mannanam.
+          </p>
+
+        </div>
+
+        <div class="row g-4 institution-cards">
+
+          <article class="col-lg-6" id="college-intro">
+            <div class="institution-card college-card">
+
+              <div class="institution-card-top">
+                <span>INSTITUTION PROFILE / 001</span>
+                <span class="institution-seal">KE</span>
+              </div>
+
+              <p class="eyebrow red-text">ABOUT THE COLLEGE</p>
+
+              <h3>
+                KURIAKOSE ELIAS<br>
+                <span>COLLEGE, MANNANAM</span>
+              </h3>
+
+              <p>
+                Kuriakose Elias College, Mannanam, was established in
+                1964 and is named after Saint Kuriakose Elias Chavara.
+                The college grew from its beginnings as a junior college
+                into an institution offering undergraduate, postgraduate
+                and research programmes.
+              </p>
+
+              <p>
+                Set on the historic hills of Mannanam, the college
+                carries an educational legacy connected with Saint
+                Kuriakose Elias Chavara and the Sanskrit School he began
+                there in 1846. The college has been affiliated with
+                Mahatma Gandhi University since 1983.
+              </p>
+
+              <div class="institution-facts">
+                <span>
+                  <strong>1964</strong>
+                  <small>ESTABLISHED</small>
+                </span>
+
+                <span>
+                  <strong>MANNANAM</strong>
+                  <small>KOTTAYAM, KERALA</small>
+                </span>
+
+                <span>
+                  <strong>MGU</strong>
+                  <small>AFFILIATED</small>
+                </span>
+              </div>
+
+              <a class="institution-link"
+                href="https://kecollege.ac.in/"
+                target="_blank" rel="noopener">
+                VISIT OFFICIAL COLLEGE WEBSITE ↗
+              </a>
+
+            </div>
+          </article>
+
+          <article class="col-lg-6" id="department">
+            <div class="institution-card department-card">
+
+              <div class="institution-card-top">
+                <span>DEPARTMENT PROFILE / 002</span>
+                <span class="institution-icon">⌘</span>
+              </div>
+
+              <p class="eyebrow red-text">ABOUT THE DEPARTMENT</p>
+
+              <h3>
+                COMPUTER SCIENCE<br>
+                <span>(SELF-FINANCING)</span>
+              </h3>
+
+              <p>
+                The Department of Computer Science (SF) at KE College
+                is focused on building students' understanding of
+                computing, programming and mathematical foundations
+                relevant to information technology.
+              </p>
+
+              <p>
+                Its published department profile highlights
+                student-centred learning through seminars, presentations,
+                project work, assignments and ICT-supported teaching.
+                These experiences encourage learners to strengthen
+                their technical knowledge and prepare for further study
+                and professional opportunities.
+              </p>
+
+              <div class="department-focus">
+                <span>CORE FOCUS</span>
+                <b>COMPUTING</b>
+                <b>PROGRAMMING</b>
+                <b>PROJECT WORK</b>
+              </div>
+
+              <a class="institution-link"
+                href="https://kecollege.ac.in/computer-applicationssf/"
+                target="_blank" rel="noopener">
+                VIEW DEPARTMENT PROFILE ↗
+              </a>
+
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT THE FEST -->
+
+    <section class="section-pad about-section" id="about">
+      <div class="container">
+
+        <div class="section-kicker">
+          <span>02 / THE CASE BRIEFING</span>
+          <span>CONFIDENTIAL INFORMATION</span>
+        </div>
+
+        <div class="row g-5 align-items-end">
+
+          <div class="col-lg-7">
+            <p class="eyebrow red-text">THE CASE BEGINS HERE</p>
+
+            <h2 class="section-title">
+              NOT JUST A FEST.<br>
+              <span>AN INVESTIGATION.</span>
+            </h2>
+          </div>
+
+          <div class="col-lg-5">
+            <p class="body-copy">
+              The Crime Files brings the world of mystery, logic and
+              discovery to life. Presented by the Department of Computer
+              Science (SF), Kuriakose Elias College, Mannanam, this is
+              your invitation to think sharper, look closer and uncover
+              what others miss.
+            </p>
+
+            <p class="body-copy small-copy">
+              The details are classified for now. Stay alert.
+              Further information will be released soon.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="briefing-cards row g-3 mt-4">
+
+          <div class="col-md-4">
+            <div class="brief-card">
+              <span class="brief-number">01</span>
+              <span class="brief-icon">⌕</span>
+              <h3>OBSERVE</h3>
+              <p>Notice the details. Nothing is random.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="brief-card">
+              <span class="brief-number">02</span>
+              <span class="brief-icon">⌁</span>
+              <h3>DEDUCE</h3>
+              <p>Connect the evidence. Trust your logic.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="brief-card">
+              <span class="brief-number">03</span>
+              <span class="brief-icon">✳</span>
+              <h3>UNCOVER</h3>
+              <p>Find the truth. Make your mark.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+
+    <section class="section-pad events-section" id="events">
+      <div class="container">
+
+        <div class="section-kicker">
+          <span>03 / OPEN INVESTIGATIONS</span>
+          <span>SELECT YOUR MISSION</span>
+        </div>
+
+        <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+
+          <div>
+            <p class="eyebrow red-text">THE EVIDENCE ROOM</p>
+            <h2 class="section-title">
+              ACTIVE <span>CASE FILES.</span>
+            </h2>
+          </div>
+
+          <p class="body-copy event-intro">
+            Choose a case. Assemble your team.<br>
+            Make every move count.
+          </p>
+
+        </div>
+
+        <!-- OFFICIAL EVENT POSTER -->
+
+        <div class="official-poster-wrap mb-4">
+
+          <div class="official-poster-copy">
+
+            <span class="poster-label">OFFICIAL EVENT BRIEF / POSTER</span>
+
+            <h3>
+              THE MISSIONS<br>
+              <span>HAVE BEEN RELEASED.</span>
+            </h3>
+
+            <p>
+              Explore the competitions, read the instructions
+              and choose your challenge.
+            </p>
+
+            <a class="poster-open"
+              href="/images/Picsart_26-11-26_08-13-30-549.jpg.jpeg"
+              target="_blank" rel="noopener">
+              VIEW FULL POSTER ↗
+            </a>
+
+          </div>
+
+          <a class="poster-image-link"
+            href="/images/Picsart_26-11-26_08-13-30-549.jpg.jpeg"
+            target="_blank" rel="noopener"
+            aria-label="Open official XENIUM 3.0 event poster">
+
+            <img
+              src="/images/Picsart_26-11-26_08-13-30-549.jpg.jpeg"
+              alt="Official XENIUM 3.0 poster of Kuriakose Elias College">
+          </a>
+
+        </div>
+
+        <div class="events-list-heading">
+          <span>ALL 10 COMPETITIONS</span>
+          <span>SELECT A CASE TO REGISTER ↓</span>
+        </div>
+
+        <div class="row g-3" id="eventGrid">
+          <div class="col-12 text-center muted-copy py-5">
+            Loading case files...
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GENERAL RULES -->
+
+    <section class="section-pad rules-section" id="rules">
+      <div class="container">
+
+        <div class="section-kicker">
+          <span>04 / PARTICIPANT GUIDELINES</span>
+          <span>READ BEFORE YOU REGISTER</span>
+        </div>
+
+        <div class="row g-5">
+
+          <div class="col-lg-5">
+
+            <p class="eyebrow red-text">THE RULEBOOK</p>
+
+            <h2 class="section-title">
+              KNOW THE<br>
+              <span>GROUND RULES.</span>
+            </h2>
+
+            <p class="body-copy mt-3">
+              Every investigator must follow the guidelines.
+              Please read these rules carefully before taking part
+              in any competition.
+            </p>
+
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="general-rules-list">
+
+              <div class="general-rule">
+                <span>01</span>
+                <p>
+                  Participants must complete the registration process
+                  with correct and valid details.
+                </p>
+              </div>
+
+              <div class="general-rule">
+                <span>02</span>
+                <p>
+                  Participants must carry their valid college identity
+                  card and show it when requested by the organisers.
+                </p>
+              </div>
+
+              <div class="general-rule">
+                <span>03</span>
+                <p>
+                  All participants must report to the venue on time
+                  and follow the schedule announced by the event
+                  coordinators.
+                </p>
+              </div>
+
+              <div class="general-rule">
+                <span>04</span>
+                <p>
+                  Participants must follow the instructions of the
+                  organisers, volunteers and judges throughout
+                  the programme.
+                </p>
+              </div>
+
+              <div class="general-rule">
+                <span>05</span>
+                <p>
+                  Misconduct, unfair practices or disruption of an
+                  event may lead to disqualification.
+                </p>
+              </div>
+
+              <div class="general-rule">
+                <span>06</span>
+                <p>
+                  Participants must respect other teams, fellow
+                  participants, organisers and the college campus.
+                </p>
+              </div>
+
+              <div class="general-rule">
+                <span>07</span>
+                <p>
+                  Participants are responsible for their personal
+                  belongings. The organisers are not responsible
+                  for loss or damage.
+                </p>
+              </div>
+
+              <div class="general-rule">
+                <span>08</span>
+                <p>
+                  Event-specific instructions, team limits and
+                  submission deadlines must also be followed.
+                </p>
+              </div>
+
+              <div class="general-rule">
+                <span>09</span>
+                <p>
+                  The judges' and organising committee's decisions
+                  will be final in matters relating to the competitions.
+                </p>
+              </div>
+
+              <div class="general-rule">
+                <span>10</span>
+                <p>
+                  The organising committee reserves the right to
+                  make reasonable changes to the schedule or
+                  programme when necessary.
+                </p>
+              </div>
+
+            </div>
+
+            <p class="rules-note">
+              PLEASE NOTE: These are general draft guidelines.
+              Follow any final instructions officially announced
+              by the organising committee.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+
+    <section class="section-pad timeline-section" id="schedule">
+      <div class="container">
+
+        <div class="section-kicker">
+          <span>05 / OPERATION TIMELINE</span>
+          <span>OFFICIAL EVENT SCHEDULE</span>
+        </div>
+
+        <div class="row g-5">
+
+          <div class="col-lg-5">
+
+            <p class="eyebrow red-text">THE PLAN</p>
+
+            <h2 class="section-title">
+              TWO DAYS.<br>
+              <span>ONE INVESTIGATION.</span>
+            </h2>
+
+            <p class="body-copy mt-3">
+              The investigation is officially scheduled.
+              Get ready to examine the evidence, take on challenges
+              and uncover the truth. Two days of mystery,
+              competition and discovery await you.
+            </p>
+
+            <div class="date-pending">
+              <span class="pending-icon">◷</span>
+
+              <div>
+                <small>OFFICIAL EVENT DATES</small>
+                <strong>02 – 03 DECEMBER 2026</strong>
+                <small>STARTS AT 10:00 AM · 02 DECEMBER</small>
+                <small>LOCATION: MANNANAM, KERALA</small>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7">
+
+            <div class="timeline-list">
+
+              <div class="timeline-item">
+                <span class="timeline-index">01</span>
+
+                <div>
+                  <small>PHASE ONE · DAY 01</small>
+                  <h3>BRIEFING & REGISTRATION</h3>
+                  <p>
+                    Participant reporting, registration verification
+                    and event instructions.
+                  </p>
+                </div>
+
+                <span class="timeline-status">02 DEC 2026</span>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-index">02</span>
+
+                <div>
+                  <small>PHASE TWO · DAY 01 & 02</small>
+                  <h3>THE INVESTIGATION</h3>
+                  <p>
+                    Competitions, challenges, teamwork and clues await.
+                    Put your skills to the test.
+                  </p>
+                </div>
+
+                <span class="timeline-status">02 – 03 DEC</span>
+              </div>
+
+              <div class="timeline-item">
+                <span class="timeline-index">03</span>
+
+                <div>
+                  <small>PHASE THREE · DAY 02</small>
+                  <h3>THE FINAL REVEAL</h3>
+                  <p>
+                    Discover the results, celebrate the winners
+                    and bring the investigation to a close.
+                  </p>
+                </div>
+
+                <span class="timeline-status">03 DEC 2026</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EVIDENCE GALLERY -->
+
+    <section class="section-pad evidence-section" id="gallery">
+      <div class="container">
+
+        <div class="section-kicker">
+          <span>06 / EVIDENCE ARCHIVE</span>
+          <span>VISUAL RECORDS</span>
+        </div>
+
+        <div class="evidence-archive">
+
+          <div class="archive-intro">
+
+            <p class="eyebrow red-text">THE ARCHIVE IS SEALED</p>
+
+            <h2 class="section-title">
+              EVERY IMAGE.<br>
+              <span>ANOTHER CLUE.</span>
+            </h2>
+
+            <p class="body-copy">
+              Step inside the investigation. Examine the scene,
+              connect the evidence and uncover the story behind
+              every clue.
+            </p>
+
+            <div class="archive-file-stamp">
+              EVIDENCE ARCHIVE / 04 FILES
+            </div>
+
+          </div>
+
+          <div class="evidence-gallery">
+
+            <figure class="evidence-image evidence-image-large">
+              <img src="/images/crime-scene.png"
+                alt="Night-time crime scene investigation with police tape">
+              <figcaption>
+                <span>EXHIBIT 01</span> THE SCENE
+              </figcaption>
+            </figure>
+
+            <figure class="evidence-image">
+              <img src="/images/puppet-investigation.png"
+                alt="Monochrome investigation board with suspended evidence screens">
+              <figcaption>
+                <span>EXHIBIT 02</span> THE STRINGS
+              </figcaption>
+            </figure>
+
+            <figure class="evidence-image">
+              <img src="/images/evidence-board.png"
+                alt="Mystery evidence board with photographs connected by red strings">
+              <figcaption>
+                <span>EXHIBIT 03</span> THE CONNECTION
+              </figcaption>
+            </figure>
+
+            <figure class="evidence-image">
+              <img src="/images/fingerprint-investigation.png"
+                alt="Fingerprint investigation graphic with police line tape">
+              <figcaption>
+                <span>EXHIBIT 04</span> THE PRINT
+              </figcaption>
+            </figure>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REGISTRATION -->
+
+    <section class="register-section" id="register">
+      <div class="container">
+
+        <div class="section-kicker">
+          <span>07 / JOIN THE INVESTIGATION</span>
+          <span>PARTICIPANT INTAKE</span>
+        </div>
+
+        <div class="row g-5">
+
+          <div class="col-lg-5">
+
+            <p class="eyebrow red-text">YOUR FILE STARTS HERE</p>
+
+            <h2 class="section-title">
+              READY TO<br>
+              <span>ENTER THE CASE?</span>
+            </h2>
+
+            <p class="body-copy mt-3">
+              Submit your details to register your interest.
+              Select an open case file and our team will receive
+              your registration.
+            </p>
+
+            <div class="registration-note">
+              <span>!</span>
+              Registration confirmation and event updates will
+              be shared by the organising team.
+            </div>
+
+          </div>
+
+          <div class="col-lg-7">
+
+            <form class="registration-form" id="registrationForm">
+
+              <div class="form-heading">
+                <span>FORM CF-REG-001</span>
+                <span>ALL FIELDS MARKED * ARE REQUIRED</span>
+              </div>
+
+              <div class="row g-3">
+
+                <div class="col-md-6">
+                  <label for="fullName">FULL NAME *</label>
+                  <input class="form-control"
+                    id="fullName"
+                    name="fullName"
+                    required
+                    placeholder="Enter your full name">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email">EMAIL ADDRESS *</label>
+                  <input class="form-control"
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="you@example.com">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="phone">PHONE NUMBER *</label>
+                  <input class="form-control"
+                    id="phone"
+                    name="phone"
+                    required
+                    inputmode="tel"
+                    placeholder="Your contact number">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="college">COLLEGE / INSTITUTION *</label>
+                  <input class="form-control"
+                    id="college"
+                    name="college"
+                    required
+                    placeholder="Your college name">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="eventId">SELECT CASE FILE *</label>
+                  <select class="form-select"
+                    id="eventId"
+                    name="eventId"
+                    required>
+                    <option value="">Choose an event</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="teamName">TEAM NAME</label>
+                  <input class="form-control"
+                    id="teamName"
+                    name="teamName"
+                    placeholder="If applicable">
+                </div>
+
+                <div class="col-12">
+                  <label for="notes">ADDITIONAL INFORMATION</label>
+                  <textarea class="form-control"
+                    id="notes"
+                    name="notes"
+                    rows="3"
+                    placeholder="Any message for the organisers (optional)"></textarea>
+                </div>
+
+                <div class="col-12">
+                  <button class="btn btn-danger btn-submit" type="submit">
+                    SUBMIT REGISTRATION <span>↗</span>
+                  </button>
+
+                  <p class="form-feedback"
+                    id="formFeedback"
+                    role="status"></p>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFICIAL SPONSORS CAROUSEL -->
+
+
+<!-- OFFICIAL SPONSORS CAROUSEL -->
+
+<section class="section-pad xenium-sponsors-section" id="sponsors">
+  <div class="container">
+
+    <div class="section-kicker">
+      <span>08 / OFFICIAL PARTNERS</span>
+      <span>XENIUM 3.0 · 2026</span>
+    </div>
+
+    <p class="eyebrow red-text">POWERING THE EXPERIENCE</p>
+
+    <h2 class="section-title">
+      OUR <span>SPONSORS.</span>
+    </h2>
+
+    <p class="body-copy xenium-sponsor-intro">
+      We gratefully acknowledge the organisations supporting XENIUM 3.0.
+    </p>
+
+    <div id="sponsorCarousel"
+      class="carousel slide sponsor-carousel"
+      data-bs-ride="carousel"
+      data-bs-interval="3000">
+
+      <div class="carousel-inner">
+
+        <!-- FIRST SLIDE -->
+
+        <div class="carousel-item active">
+          <div class="row g-3 justify-content-center">
+
+            <div class="col-6 col-md-3">
+              <div class="xenium-sponsor-card">
+                <img src="/images/elohi.png" alt="Elohi Event Management">
+                <strong>ELOHI</strong>
+                <small>EVENT MANAGEMENT</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="xenium-sponsor-card">
+                <img src="/images/electric-origin.png" alt="Electric Origin Mahindra">
+                <strong>ELECTRIC ORIGIN</strong>
+                <small>EVs · MAHINDRA</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="xenium-sponsor-card">
+                <img src="/images/horizon-motors.jpg" alt="Horizon Motors">
+                <strong>HORIZON MOTORS</strong>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="xenium-sponsor-card">
+                <img src="/images/larosa.jpeg" alt="LaRosa Boutique">
+                <strong>LAROSA</strong>
+                <small>BOUTIQUE</small>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SECOND SLIDE -->
+
+        <div class="carousel-item">
+          <div class="row g-3 justify-content-center">
+
+            <div class="col-6 col-md-3">
+              <div class="xenium-sponsor-card">
+                <img src="/images/lilies.jpeg" alt="Lilies Supplus Store">
+                <strong>LILIES</strong>
+                <small>SUPPLUS STORE</small>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="xenium-sponsor-card">
+                <img src="/images/kia.jpg" alt="Incheon Kia">
+                <strong>INCHEON KIA</strong>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="xenium-sponsor-card">
+                <img src="/images/nissan.jpg" alt="Nissan">
+                <strong>NISSAN</strong>
+              </div>
+            </div>
+
+            <div class="col-6 col-md-3">
+              <div class="xenium-sponsor-card">
+                <img src="/images/chandys.png" alt="Chandy's">
+                <strong>CHANDY'S</strong>
+                <small>SINCE 1994</small>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- PREVIOUS BUTTON -->
+
+      <button class="carousel-control-prev"
+        type="button"
+        data-bs-target="#sponsorCarousel"
+        data-bs-slide="prev">
+
+        <span class="carousel-control-prev-icon"
+          aria-hidden="true"></span>
+
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <!-- NEXT BUTTON -->
+
+      <button class="carousel-control-next"
+        type="button"
+        data-bs-target="#sponsorCarousel"
+        data-bs-slide="next">
+
+        <span class="carousel-control-next-icon"
+          aria-hidden="true"></span>
+
+        <span class="visually-hidden">Next</span>
+      </button>
+
+      <!-- INDICATORS -->
+
+      <div class="carousel-indicators sponsor-indicators">
+
+        <button type="button"
+          data-bs-target="#sponsorCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"></button>
+
+        <button type="button"
+          data-bs-target="#sponsorCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+
+      </div>
+
+    </div>
+
+    <!-- MEDIA PARTNER -->
+
+    <div class="xenium-media-partner">
+      <span>OFFICIAL MEDIA PARTNER</span>
+      <img src="/images/sargakshetra-89-6-fm.png" alt="Sargakshetra 89.6 FM">
+      <strong>SARGAKSHETRA 89.6 FM</strong>
+    </div>
+
+  </div>
+</section>
+
+
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-main">
+
+        <div>
+          <a class="navbar-brand brand-mark" href="#home">
+            <span class="brand-seal">CF</span>
+            <span>THE CRIME <b>FILES</b>
+              <small>CASE NO. 001 / 2026</small>
+            </span>
+          </a>
+
+          <p class="footer-desc">
+            A college fest by the Department of Computer Science (SF),
+            Kuriakose Elias College, Mannanam.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <span>QUICK ACCESS</span>
+          <a href="#about">The Case</a>
+          <a href="#events">Case Files</a>
+          <a href="#rules">General Rules</a>
+          <a href="#schedule">Timeline</a>
+          <a href="#register">Register</a>
+          <a href="#sponsors">Sponsors</a>
+        </div>
+
+        <div class="footer-contact">
+          <span>HEADQUARTERS</span>
+          <p>
+            Kuriakose Elias College<br>
+            Mannanam, Kottayam, Kerala
+          </p>
+
+          <span>STUDENT COORDINATOR</span>
+          <p>
+            <b>Aashwin J Srampickal</b><br>
+            <a href="tel:+919847053687">+91 98470 53687</a>
+          </p>
+
+          <span>FACULTY COORDINATORS</span>
+          <p>
+            <b>Ms. Ann Maria</b><br>
+            <a href="tel:+918281586759">+91 82815 86759</a>
+          </p>
+
+          <p>
+            <b>Ms. Anitta T. Manuel (HOD)</b><br>
+            <a href="tel:+919495325712">+91 94953 25712</a>
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 THE CRIME FILES · KE COLLEGE</span>
+        <span>THE TRUTH IS OUT THERE. GO FIND IT.</span>
+        <a href="/admin">ADMIN ACCESS ↗</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="siteToast" class="toast text-bg-dark border-danger" role="alert">
+      <div class="toast-body" id="toastMessage"></div>
+    </div>
+  </div>
+
+  <script src="/vendor/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/app.js"></script>
+
+</body>
+</html>

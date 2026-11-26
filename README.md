@@ -42,14 +42,8 @@ A crime-and-investigation themed fest website for **Kuriakose Elias College, Man
    npm start
    ```
 
-7. Open:
-   - Public website: http://localhost:3000
-   - Admin panel: http://localhost:3000/admin
 
-## Default local development login
-
-- Username: `admin`
-- Password: `ChangeMe123!`
+- 
 
 Change these credentials in `.env` before sharing or deploying the site. Do not deploy with the development defaults.
 

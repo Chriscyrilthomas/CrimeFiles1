@@ -478,8 +478,12 @@ app.get("*", (req, res) => {
 
 // START SERVER
 
-app.listen(PORT, () => {
-    console.log(
-        `The Crime Files is running at http://localhost:${PORT}`
-    );
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(
+            `The Crime Files is running at http://localhost:${PORT}`
+        );
+    });
+}
+
+module.exports = app;

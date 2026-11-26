@@ -5,10 +5,21 @@ const path = require("path");
 const KEY_FILE = path.join(__dirname, "service-account.json");
 
 async function authorize() {
-    const auth = new google.auth.GoogleAuth({
-        keyFile: KEY_FILE,
-        scopes: ["https://www.googleapis.com/auth/spreadsheets"]
-    });
+    const credentials = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+
+    let auth;
+
+    if (credentials) {
+        auth = new google.auth.GoogleAuth({
+            credentials: JSON.parse(credentials),
+            scopes: ["https://www.googleapis.com/auth/spreadsheets"]
+        });
+    } else {
+        auth = new google.auth.GoogleAuth({
+            keyFile: KEY_FILE,
+            scopes: ["https://www.googleapis.com/auth/spreadsheets"]
+        });
+    }
 
     return await auth.getClient();
 }

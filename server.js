@@ -8,6 +8,7 @@ const path = require("path");
 const { appendRegistration } = require("./googleSheets");
 
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 3000;
 const EVENTS_FILE = path.join(__dirname, "data", "events.json");
 
